@@ -1,0 +1,11 @@
+n = int(input("¿Cuántos términos desea ver? (entero positivo): "))
+
+if n <= 0:
+    print("Debe ingresar un número entero positivo.")
+else:
+    a, b = 0, 1
+    serie = []
+    for _ in range(n):
+        serie.append(a)
+        a, b = b, a + b
+    print("Serie de Fibonacci:", *serie)

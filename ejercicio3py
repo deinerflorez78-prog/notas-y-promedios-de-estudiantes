@@ -1,0 +1,33 @@
+saldo = 500000
+opcion = 0
+
+while opcion != 4:
+    print("\n--- CAJERO AUTOMÁTICO ---")
+    print("1. Consultar saldo")
+    print("2. Depositar dinero")
+    print("3. Retirar dinero")
+    print("4. Salir")
+    opcion = int(input("Elija una opción: "))
+
+    if opcion == 1:
+        print(f"Su saldo es: ${saldo:,.0f}")
+    elif opcion == 2:
+        deposito = float(input("Monto a depositar: $"))
+        if deposito > 0:
+            saldo += deposito
+            print(f"Depósito exitoso. Nuevo saldo: ${saldo:,.0f}")
+        else:
+            print("El monto debe ser mayor a cero.")
+    elif opcion == 3:
+        retiro = float(input("Monto a retirar: $"))
+        if retiro <= 0:
+            print("El monto debe ser mayor a cero.")
+        elif retiro > saldo:
+            print("Fondos insuficientes.")
+        else:
+            saldo -= retiro
+            print(f"Retiro exitoso. Nuevo saldo: ${saldo:,.0f}")
+    elif opcion == 4:
+        print("Gracias por usar el cajero. ¡Hasta pronto!")
+    else:
+        print("Opción no válida.")
